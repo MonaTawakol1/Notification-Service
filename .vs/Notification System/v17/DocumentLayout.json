@@ -1,0 +1,201 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Signal R\\Notification System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\wwwroot\\js\\notification.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\wwwroot\\js\\notification.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\views\\notification\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\views\\notification\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\subscribetabledependencies\\subscribenotificationtabledependency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\subscribetabledependencies\\subscribenotificationtabledependency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\views\\account\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\views\\account\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\models\\signalrcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\models\\signalrcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\dbscripts\\tablescripts.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\dbscripts\\tablescripts.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|d:\\signal r\\notification system\\notification system\\dbscripts\\tablescripts.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{90000B44-7CC1-4926-B28C-DD05DAC92FFF}|Notification System\\Notification System.csproj|solutionrelative:notification system\\dbscripts\\tablescripts.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "signIn.cshtml",
+              "DocumentMoniker": "D:\\Signal R\\Notification System\\Notification System\\Views\\Account\\signIn.cshtml",
+              "RelativeDocumentMoniker": "Notification System\\Views\\Account\\signIn.cshtml",
+              "ToolTip": "D:\\Signal R\\Notification System\\Notification System\\Views\\Account\\signIn.cshtml",
+              "RelativeToolTip": "Notification System\\Views\\Account\\signIn.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-25T00:44:10.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Signal R\\Notification System\\Notification System\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Notification System\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Signal R\\Notification System\\Notification System\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Notification System\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACcAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-25T00:43:38.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "D:\\Signal R\\Notification System\\Notification System\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "Notification System\\Controllers\\NotificationController.cs",
+              "ToolTip": "D:\\Signal R\\Notification System\\Notification System\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "Notification System\\Controllers\\NotificationController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T00:15:06.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "notification.js",
+              "DocumentMoniker": "D:\\Signal R\\Notification System\\Notification System\\wwwroot\\js\\notification.js",
+              "RelativeDocumentMoniker": "Notification System\\wwwroot\\js\\notification.js",
+              "ToolTip": "D:\\Signal R\\Notification System\\Notification System\\wwwroot\\js\\notification.js",
+              "RelativeToolTip": "Notification System\\wwwroot\\js\\notification.js",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACgAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-06-24T22:52:58.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NotificationHub.cs",
+              "DocumentMoniker": "D:\\Signal R\\Notification System\\Notification System\\Hubs\\NotificationHub.cs",
+              "RelativeDocumentMoniker": "Notification System\\Hubs\\NotificationHub.cs",
+              "ToolTip": "D:\\Signal R\\Notification System\\Notification System\\Hubs\\NotificationHub.cs",
+              "RelativeToolTip": "Notification System\\Hubs\\NotificationHub.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAYwBoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T22:29:48.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Signal R\\Notification System\\Notification System\\Views\\Notification\\Index.cshtml",
+              "RelativeDocumentMoniker": "Notification System\\Views\\Notification\\Index.cshtml",
+              "ToolTip": "D:\\Signal R\\Notification System\\Notification System\\Views\\Notification\\Index.cshtml",
+              "RelativeToolTip": "Notification System\\Views\\Notification\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEUAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-25T00:15:24.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SubscribeNotificationTableDependency.cs",
+              "DocumentMoniker": "D:\\Signal R\\Notification System\\Notification System\\SubscribeTableDependencies\\SubscribeNotificationTableDependency.cs",
+              "RelativeDocumentMoniker": "Notification System\\SubscribeTableDependencies\\SubscribeNotificationTableDependency.cs",
+              "ToolTip": "D:\\Signal R\\Notification System\\Notification System\\SubscribeTableDependencies\\SubscribeNotificationTableDependency.cs",
+              "RelativeToolTip": "Notification System\\SubscribeTableDependencies\\SubscribeNotificationTableDependency.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAYwE4AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T22:27:49.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Signal R\\Notification System\\Notification System\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Notification System\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Signal R\\Notification System\\Notification System\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Notification System\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAjwDgAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T22:42:16.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TableScripts.sql ",
+              "DocumentMoniker": "D:\\Signal R\\Notification System\\Notification System\\DbScripts\\TableScripts.sql",
+              "RelativeDocumentMoniker": "Notification System\\DbScripts\\TableScripts.sql",
+              "ToolTip": "D:\\Signal R\\Notification System\\Notification System\\DbScripts\\TableScripts.sql",
+              "RelativeToolTip": "Notification System\\DbScripts\\TableScripts.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-06-24T22:45:42.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SignalRContext.cs",
+              "DocumentMoniker": "D:\\Signal R\\Notification System\\Notification System\\Models\\SignalRContext.cs",
+              "RelativeDocumentMoniker": "Notification System\\Models\\SignalRContext.cs",
+              "ToolTip": "D:\\Signal R\\Notification System\\Notification System\\Models\\SignalRContext.cs",
+              "RelativeToolTip": "Notification System\\Models\\SignalRContext.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBsAAABrAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T22:49:57.241Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

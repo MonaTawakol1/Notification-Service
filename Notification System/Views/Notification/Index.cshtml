@@ -1,0 +1,70 @@
+﻿@* @model List<Notification_System.Models.Notification>
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification List</title>
+    <style>
+        /* Example CSS for notification list */
+        #notificationList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            #notificationList li {
+                background-color: #f4f4f4;
+                border: 1px solid #ccc;
+                margin-bottom: 5px;
+                padding: 10px;
+            }
+    </style>
+</head>
+<body>
+    <input type="text" id="Username" placeholder="Enter username">
+    <ul id="notificationList">
+        @foreach(var notify in Model)
+        {
+            if (@HttpContextAccessor.HttpContext?.Session.GetString("Username")==notify.Username){
+            <li>@notify.Message</li>
+        }
+        }
+
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.6/signalr.min.js"></script>
+    <script>
+        "use strict";
+
+        var connection = new signalR.HubConnectionBuilder().withUrl("/notificationHub").build();
+
+        connection.start();
+     
+
+        connection.on("ReceivedNotification", function (message) {
+            console.log("General notification received:", message);
+            addNotificationToList(message, 'General Message');
+        });
+
+        connection.on("ReceivedPersonalNotification", function (message, username) {
+            console.log("Personal notification received:", message, username);
+            addNotificationToList(message, 'Hey ' + username);
+        });
+
+       
+
+        // function addNotificationToList(message, title) {
+        //     var notificationList = $('#notificationList');
+        //     var li = $('<li>').text(title + ': ' + message);
+        //     notificationList.prepend(li);
+        // }
+        function addNotificationToList(message, title) {
+            var notificationList = $('#notificationList');
+            notificationList.prepend("<li>" + title + ": " + message + "</li>");
+        }
+
+
+    </script>
+</body>
+</html> *@
