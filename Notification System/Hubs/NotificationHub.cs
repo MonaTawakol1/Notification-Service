@@ -12,16 +12,16 @@ namespace Notification_System.Hubs
             this.dbContext = dbContext;
         }
 
-        public async Task SendNotificationToAll(string message)
+        public async Task SendNotificationToAll(string message , string username ,DateTime notificationdate)
         {
-            await Clients.All.SendAsync("ReceivedNotification", message);
+            await Clients.All.SendAsync("ReceivedNotification", message ,username,notificationdate);
         }
-        public async Task SendNotificationPersonal(string message, string username)
+        public async Task SendNotificationPersonal(string message, string username,DateTime notificationdate)
         {
             var hubConnections = dbContext.HubConnections.Where(con => con.Username == username).ToList();
             foreach (var hubConnection in hubConnections)
             {
-                await Clients.Client(hubConnection.ConnectionId).SendAsync("ReceivedPersonalNotification", message, username);
+                await Clients.Client(hubConnection.ConnectionId).SendAsync("ReceivedPersonalNotification", message, username,notificationdate);
             }
         }
 
@@ -43,27 +43,6 @@ namespace Notification_System.Hubs
             dbContext.HubConnections.Add(hubConnection);
             await dbContext.SaveChangesAsync();
         }
-        //public async Task SaveUserConnection(string username)
-        //{
-        //    var connectionId = Context.ConnectionId;
-        //    HubConnection hubConnection = new HubConnection
-        //    {
-        //        ConnectionId = connectionId,
-        //        Username = username
-        //    };
-        //    try
-        //    {
-        //        dbContext.HubConnections.Add(hubConnection);
-        //        await dbContext.SaveChangesAsync();
-        //        Console.WriteLine("User connection saved successfully.");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Log the exception to console for debugging purposes
-        //        Console.WriteLine($"Error saving user connection: {ex.Message}");
-        //        throw; // Rethrow the exception if needed
-        //    }
-        //}
         public override Task OnDisconnectedAsync(Exception? exception)
         {
             var hubConnection = dbContext.HubConnections.FirstOrDefault(con => con.ConnectionId == Context.ConnectionId);
@@ -76,6 +55,17 @@ namespace Notification_System.Hubs
             return base.OnDisconnectedAsync(exception);
         }
 
+        private async Task SaveNotificationToDB(string message, string username, DateTime notificationdate)
+        {
+            var notification = new Notification
+            {
+                Message = message,
+                Username = username,
+                NotificationDateTime = notificationdate
+            };
 
+            dbContext.Notifications.Add(notification);
+            await dbContext.SaveChangesAsync();
+        }
     }
 }

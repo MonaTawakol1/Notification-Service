@@ -29,6 +29,11 @@ public partial class SignalRContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Notification>(entity =>
+        {
+            entity.ToTable("Notification", tb => tb.HasTrigger("tr_dbo_Notification_465e619f-bad9-4133-8614-37288bda3614_Sender"));
+        });
+
         OnModelCreatingPartial(modelBuilder);
     }
 

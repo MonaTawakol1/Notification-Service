@@ -17,11 +17,26 @@ namespace Notification_System
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddSignalR();
-           
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<SignalRContext>(options =>
-            options.UseSqlServer(connectionString),ServiceLifetime.Singleton);
+            options.UseSqlServer(connectionString), ServiceLifetime.Singleton);
+            //        builder.Services.AddDbContext<SignalRContext>(options =>
+            //options.UseSqlServer(connectionString), ServiceLifetime.Scoped);
+            //        builder.Services.AddDbContext<SignalRContext>(options =>
+            //options.UseSqlServer(connectionString));
+
 
             //Dependency Injection
             builder.Services.AddSingleton<UserRepo>();
