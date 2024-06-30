@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notification Submission</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Create Notification</h2>
+
+    <form id="notificationForm">
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <input type="text" id="message" name="message" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="messageType">Message Type:</label>
+            <select id="messageType" name="messageType">
+                <option value="All">All Users</option>
+                <option value="Personal">Individual User</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="notificationDateTime">Notification Date & Time:</label>
+            <input type="datetime-local" id="notificationDateTime" name="notificationDateTime" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <script>
+        $('#notificationForm').on('submit', function (e) {
+            e.preventDefault(); // Prevent the form from submitting normally
+
+            var formData = $(this).serializeArray();
+            var jsonData = {};
+            $.each(formData, function (i, v) {
+                jsonData[v.name] = v.value;
+            });
+
+            $.ajax({
+                url: '/api/notification/create',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(jsonData),
+                success: function (result) {
+                    alert('Notification submitted successfully!');
+                },
+                error: function (xhr, status, error) {
+                    alert('An error occurred: ' + error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

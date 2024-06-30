@@ -8256,11 +8256,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Signal R\\Notification System\\Notification System\\Notification System.csproj",
+      "projectUniqueName": "D:\\Signal R\\Notification System - Copy (5) - Copy - Copy\\Notification System\\Notification System.csproj",
       "projectName": "Notification System",
-      "projectPath": "D:\\Signal R\\Notification System\\Notification System\\Notification System.csproj",
+      "projectPath": "D:\\Signal R\\Notification System - Copy (5) - Copy - Copy\\Notification System\\Notification System.csproj",
       "packagesPath": "C:\\Users\\Asmaa\\.nuget\\packages\\",
-      "outputPath": "D:\\Signal R\\Notification System\\Notification System\\obj\\",
+      "outputPath": "D:\\Signal R\\Notification System - Copy (5) - Copy - Copy\\Notification System\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Asmaa\\AppData\\Roaming\\NuGet\\NuGet.Config",

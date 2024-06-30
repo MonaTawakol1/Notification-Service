@@ -15,11 +15,6 @@ public partial class Notification
     public int Id { get; set; }
 
     [Required]
-    [StringLength(50)]
-    [Unicode(false)]
-    public string Username { get; set; }
-
-    [Required]
     [StringLength(1000)]
     [Unicode(false)]
     public string Message { get; set; }
@@ -29,5 +24,11 @@ public partial class Notification
     [Unicode(false)]
     public string MessageType { get; set; }
 
-    public DateOnly NotificationDateTime { get; set; }
+    [Column(TypeName = "datetime")]
+    public DateTime NotificationDateTime { get; set; }
+
+    [Required]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Username { get; set; }
 }

@@ -1,70 +1,219 @@
-﻿@* @model List<Notification_System.Models.Notification>
-@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+﻿
+@* @model List<Notification_System.Models.Notification>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notification List</title>
+    <title>Notifications</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Example CSS for notification list */
-        #notificationList {
-            list-style-type: none;
-            padding: 0;
+        .notification-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-            #notificationList li {
-                background-color: #f4f4f4;
-                border: 1px solid #ccc;
-                margin-bottom: 5px;
-                padding: 10px;
-            }
+        .notification-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message-type {
+            font-weight: bold;
+        }
+
+        .message {
+            margin-top: 5px;
+        }
+
+        .date {
+            color: #888;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
-    <input type="text" id="Username" placeholder="Enter username">
-    <ul id="notificationList">
-        @foreach(var notify in Model)
+    <div id="notifications-container" class="container mt-4">
+        <h1>Notifications</h1>
+        @if (Model.Any())
         {
-            if (@HttpContextAccessor.HttpContext?.Session.GetString("Username")==notify.Username){
-            <li>@notify.Message</li>
+            <div class="list-group">
+                @foreach (var item in Model)
+                {
+                    <div class="notification-item list-group-item">
+                        <div class="notification-details">
+                            <div class="message-type">@item.MessageType</div>
+                            <div class="message">@item.Message</div>
+                        </div>
+                        <div class="date">@item.NotificationDateTime.ToString("g")</div>
+                    </div>
+                }
+            </div>
         }
+        else
+        {
+            <p>No notifications found.</p>
+        }
+        <a asp-action="Create" class="btn btn-primary mt-4">Create New Notification</a>
+    </div>
+</body>
+</html>
+ *@
+
+@* <!DOCTYPE html>
+<html>
+<head>
+    <title>Notifications</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/3.1.3/signalr.min.js"></script>
+    <style>
+        .notification-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-    </ul>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.6/signalr.min.js"></script>
+        .notification-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message-type {
+            font-weight: bold;
+        }
+
+        .message {
+            margin-top: 5px;
+        }
+
+        .date {
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div id="notifications-container" class="container mt-4">
+        <h1>Notifications</h1>
+        <div class="list-group" id="notification-list">
+            <!-- Notifications will be dynamically added here -->
+        </div>
+        <p id="no-notifications-message" style="display:none;">No notifications found.</p>
+        <a asp-action="Create" class="btn btn-primary mt-4">Create New Notification</a>
+    </div>
+
     <script>
-        "use strict";
-
-        var connection = new signalR.HubConnectionBuilder().withUrl("/notificationHub").build();
-
-        connection.start();
-     
-
-        connection.on("ReceivedNotification", function (message) {
-            console.log("General notification received:", message);
-            addNotificationToList(message, 'General Message');
+        // Establish a connection to the SignalR hub
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/notificationHub")
+            .build();
+        // Start the connection
+        connection.start().catch(function (err) {
+            return console.error(err.toString());
         });
 
-        connection.on("ReceivedPersonalNotification", function (message, username) {
-            console.log("Personal notification received:", message, username);
-            addNotificationToList(message, 'Hey ' + username);
-        });
-
-       
-
-        // function addNotificationToList(message, title) {
-        //     var notificationList = $('#notificationList');
-        //     var li = $('<li>').text(title + ': ' + message);
-        //     notificationList.prepend(li);
-        // }
-        function addNotificationToList(message, title) {
-            var notificationList = $('#notificationList');
-            notificationList.prepend("<li>" + title + ": " + message + "</li>");
+        // Functions to display notifications
+        function DisplayGeneralNotification(message, title) {
+            toastr.options = {
+                closeButton: true,
+                progressBar: true,
+                showMethod: 'slideDown',
+                timeOut: 4000
+            };
+            toastr.info(message, title);
         }
 
+        function DisplayPersonalNotification(message, title) {
+            toastr.options = {
+                closeButton: true,
+                progressBar: true,
+                showMethod: 'slideDown',
+                timeOut: 4000
+            };
+            toastr.success(message, title);
+        }
 
+        // Function to create and add a notification to the list
+        function addNotificationToList(message, messageType, username, notificationDate) {
+            const notificationList = document.getElementById("notification-list");
+            const noNotificationsMessage = document.getElementById("no-notifications-message");
+
+            // Create a new notification item
+            const notificationItem = document.createElement("div");
+            notificationItem.className = "notification-item list-group-item";
+            const notificationDetails = document.createElement("div");
+            notificationDetails.className = "notification-details";
+            const messageTypeElement = document.createElement("div");
+            messageTypeElement.className = "message-type";
+            messageTypeElement.innerText = messageType; // Use messageType variable
+            const messageContent = document.createElement("div");
+            messageContent.className = "message";
+            messageContent.innerText = message;
+            const date = document.createElement("div");
+            date.className = "date";
+            date.innerText = new Date(notificationDate).toLocaleString();
+
+            notificationDetails.appendChild(messageTypeElement);
+            notificationDetails.appendChild(messageContent);
+            notificationItem.appendChild(notificationDetails);
+            notificationItem.appendChild(date);
+            notificationList.prepend(notificationItem);
+
+            // Hide the "No notifications found" message if it is visible
+            noNotificationsMessage.style.display = "none";
+        }
+
+        // Listen for general notifications
+        connection.on("ReceivedNotification", function (message, messageType, username, notificationDate) {
+            addNotificationToList(message, messageType, username, notificationDate);
+            DisplayGeneralNotification(message, 'General Message');
+        });
+
+        // Listen for personal notifications
+        connection.on("ReceivedPersonalNotification", function (message, messageType, username, notificationDate) {
+            addNotificationToList(message, messageType, username, notificationDate);
+            DisplayPersonalNotification(message, 'Personal Message');
+        });
     </script>
 </body>
 </html> *@
+
+ 
+@model IEnumerable<Notification_System.Models.Notification>
+
+<h1>Notifications</h1>
+
+<div class="row">
+    @if (Model.Any())
+    {
+        foreach (var notification in Model)
+        {
+            <div class="col-md-12 col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@notification.Message</h5>
+                        <p class="card-text"><small class="text-muted">Date: @notification.NotificationDateTime.ToString("g")</small></p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No notifications available.</p>
+    }
+</div>
+
+@* 
+@section Scripts {
+    <script src="~/js/notification.js"></script>
+}
+ *@
